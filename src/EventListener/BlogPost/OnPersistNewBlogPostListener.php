@@ -24,7 +24,7 @@ class OnPersistNewBlogPostListener
             return;
         }
 
-        $webTaskUrl = getenv('webtaskUrl');
+        $webTaskUrl = getenv('WEBTASK_URL');
         $authorName = urlencode($entity->getAuthor()->getName());
         $blogTitle = urlencode($entity->getTitle());
 
