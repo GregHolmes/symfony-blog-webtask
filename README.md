@@ -150,6 +150,19 @@ Finally, run the development server with the following command:
 php bin/console server:run
 ```
 
+__NOTE:__ For this webtask, the only changes made to the existing code can be found here:
+
+* new file - `./src/EventListener/BlogPost/OnPersistNewBlogPostListener.php`
+* new lines added to - `./config/services.yaml`
+
+The new lines were:
+
+```
+App\EventListener\BlogPost\OnPersistNewBlogPostListener:
+    tags:
+        - { name: doctrine.event_listener, event: postPersist, connection: default }
+```
+
 ## See the blog
 
 Open your browser to the following URL: `http://127.0.0.1/blog`
@@ -162,4 +175,3 @@ Click the `Admin` button again and then the `Add entry` button
 Complete the fields to create a new Blog post. On submission of this. You should then see a new post in your Slack channel saying something along the lines of:
 
 `<author name> has posted a new blog post titled: <blog post title>`
-
