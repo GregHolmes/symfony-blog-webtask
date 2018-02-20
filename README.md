@@ -70,7 +70,7 @@ function postToSlack(context, cb) {
 
 At the bottom of the page will be your Webtask URL, take note of this.
 
-##Setting up the Symfony blog
+## Setting up the Symfony blog
 
 ```bash
 git clone git@github.com:GregHolmes/symfony-blog-webtask.git
